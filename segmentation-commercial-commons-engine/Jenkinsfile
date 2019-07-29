@@ -1,0 +1,6 @@
+def pipeline_main
+node('master') {
+  sh "curl -L $PIPELINE_V1_MAIN_URL > spark.groovy"
+  pipeline_main = load 'spark.groovy'
+}
+pipeline_main()
